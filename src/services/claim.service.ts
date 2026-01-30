@@ -64,6 +64,14 @@ export class ClaimService {
             };
         }
 
+        if (policy.coverageLimit <= Math.max(0, claim.amountClaimed - policy.deductible)) {
+            return {
+                approved: true,
+                payout: policy.coverageLimit,
+                reasonCode: 'EXCEEDS_LIMIT'
+            };
+        }
+
         return {
             approved: true,
             payout: finalPayout,

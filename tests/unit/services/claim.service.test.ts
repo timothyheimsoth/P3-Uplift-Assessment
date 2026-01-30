@@ -38,7 +38,7 @@ describe('ClaimService', () => {
     });
 
     describe('evaluate', () => {
-        it('should accept a claim object', () => {
+        it('should accept a valid claim object', () => {
             const claim: Claim = {
                 policyId: 'POL123',
                 incidentType: 'fire',
@@ -91,6 +91,20 @@ describe('ClaimService', () => {
                 approved: false,
                 payout: 0,
                 reasonCode: 'ZERO_PAYOUT'
+            });
+        });
+
+        it('should not allow payout to exceed coverage limit.', () => {
+            const claim: Claim = {
+                policyId: 'POL123',
+                incidentType: 'fire',
+                incidentDate: new Date('2023-06-15'),
+                amountClaimed: 20000,
+            };
+            expect(claimService.evaluate(claim)).toEqual({
+                approved: true,
+                payout: 10000,
+                reasonCode: 'EXCEEDS_LIMIT'
             });
         });
     });
