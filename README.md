@@ -51,38 +51,38 @@ npm run coverage
 
 ## Design Decisions & Trade-offs
 ### In-Memory Storage (Map)
-**Decision:** Used Map<string, Policy> for policy storage instead of a database to keep the implementation simple, fast, no external dependencies.
+**Decision:** Used Map<string, Policy> for policy storage instead of a database to keep the implementation simple, fast, no external dependencies.<br/>
 **Future:** Replace with database when persistence is needed.
 
 ### Validation in Service Layer
-**Decision:** Implemented validation directly in PolicyService and ClaimService.
+**Decision:** Implemented validation directly in PolicyService and ClaimService.<br/>
 **Future:** Extract to a separate validator class or use a schema library.
 
 ### Synchronous Evaluation
-**Decision:** All methods are synchronous (no async/await).
+**Decision:** All methods are synchronous (no async/await).<br/>
 **Future:** Convert to async when integrating with external services.
 
 ## With more time:
-Replace in-memory Map with database and async operations
-Convert services to async/await patterns
-Implement connection pooling and transaction support
-Add database migration system
-Implement runtime schema validation
-Create reusable validators for Policy, Claim, ClaimResult
-Create custom error classes (ValidationError, PolicyNotFoundError, ClaimEvaluationError)
-Add structured logging 
-Implement centralized error handler
-Add retry strategies for transient failures
-Build REST API layer
-Add request validation middleware
-Implement proper HTTP status codes and error responses
-Generate OpenAPI/Swagger documentation
-Add request/response logging
-Add distributed tracing 
-Implement caching layer for policies
-Add performance metrics 
-Benchmark claim evaluation speed
-Reach 100% code coverage
-Add integration tests with test database
-Add E2E tests for full workflows
-Add property-based testing (fast-check)
+Replace in-memory Map with database and async operations<br/>
+Convert services to async/await patterns<br/>
+Implement connection pooling and transaction support<br/>
+Add database migration system<br/>
+Implement runtime schema validation<br/>
+Create reusable validators for Policy, Claim, ClaimResult<br/>
+Create custom error classes (ValidationError, PolicyNotFoundError, ClaimEvaluationError)<br/>
+Add structured logging<br/>
+Implement centralized error handler<br/>
+Add retry strategies for transient failures<br/>
+Build REST API layer<br/>
+Add request validation middleware<br/>
+Implement proper HTTP status codes and error responses<br/>
+Generate OpenAPI/Swagger documentation<br/>
+Add request/response logging<br/>
+Add distributed tracing<br/> 
+Implement caching layer for policies<br/>
+Add performance metrics<br/>
+Benchmark claim evaluation speed<br/>
+Reach 100% code coverage<br/>
+Add integration tests with test database<br/>
+Add E2E tests for full workflows<br/>
+Add property-based testing (fast-check)<br/>
