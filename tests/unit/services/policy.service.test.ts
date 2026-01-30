@@ -47,6 +47,6 @@ describe('PolicyService', () => {
     });
 
     it('should throw an error when getting a non-existent policy', () => {
-        expect(() => policyService.get('non-existent')).toThrow('Not implemented');
+        expect(() => policyService.get('non-existent')).toThrow('Policy with ID non-existent not found');
     });
 });
