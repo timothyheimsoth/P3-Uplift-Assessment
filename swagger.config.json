@@ -1,0 +1,7 @@
+{
+  "url": "http://localhost:5000/api/v1/swagger.json",
+  "output": "./src/index",
+  "name": "index.ts",
+  "httpClientType": "axios",
+  "modular": true
+}
